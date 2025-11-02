@@ -51,7 +51,7 @@ app.http('postPay', {
         merchantId,
       );
 
-      log.info({ event: 'PAYMENT_INTENT_CREATED', orderId: id, merchantId, checkoutId: intent.intentId });
+      log.info({ event: 'PAYMENT_INTENT_CREATED', orderId: id, merchantId });
       return {
         status: 200,
         jsonBody: { paymentIntentId: intent.intentId, status: 'PENDING' },
