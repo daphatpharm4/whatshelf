@@ -1,0 +1,23 @@
+{
+  "name": "whatshelf",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@8.15.4",
+  "scripts": {
+    "bootstrap": "pnpm install --recursive",
+    "dev": "pnpm --filter @whatshelf/api dev",
+    "build": "pnpm --recursive run build",
+    "lint": "pnpm --recursive run lint",
+    "test": "pnpm --recursive run test",
+    "typecheck": "pnpm --recursive run typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  }
+}

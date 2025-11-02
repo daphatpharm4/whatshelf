@@ -1,0 +1,10 @@
+{
+  "version": "2.0",
+  "extensions": {
+    "queues": {
+      "batchSize": 8,
+      "newBatchThreshold": 4,
+      "maxDequeueCount": 5
+    }
+  }
+}
