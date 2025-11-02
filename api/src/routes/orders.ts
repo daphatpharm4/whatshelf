@@ -31,6 +31,7 @@ app.http('postPay', {
           phone: input.phone,
           amount: order.totals.grandTotal,
           reference: id,
+          merchantId,
         }),
       );
 
