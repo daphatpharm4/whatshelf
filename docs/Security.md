@@ -1,9 +1,3 @@
-
----
-
-## docs/Security.md (author: CA)
-
-```md
 # Security
 
 - **Auth**
