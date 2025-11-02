@@ -20,5 +20,14 @@ export const containers: Record<string, Container> = {
 export const upsert = async <T>(name: keyof typeof containers, document: T, partitionKey: string) =>
   containers[name].items.upsert(document, { partitionKey });
 
-export const readById = async <T>(name: keyof typeof containers, id: string, partitionKey: string) =>
-  containers[name].item(id, partitionKey).read<T>();
+export const readById = async <T>(name: keyof typeof containers, id: string, partitionKey: string) => {
+  try {
+    const { resource } = await containers[name].item(id, partitionKey).read<T>();
+    return { resource };
+  } catch (error: any) {
+    if (error?.code === 404 || error?.statusCode === 404) {
+      return { resource: undefined };
+    }
+    throw error;
+  }
+};
