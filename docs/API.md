@@ -1,10 +1,6 @@
-
-## docs/API.md (author: SE)
-
-```md
 # API v1 (HTTP+JSON)
 
-Base: `/v1` — Auth via JWT (merchant) or signed buyer links.
+Base path: `/v1` — Auth via JWT (merchant) or signed buyer links.
 
 ## Catalog
 - `POST /products` → 201 `{product}`
@@ -28,13 +24,21 @@ Base: `/v1` — Auth via JWT (merchant) or signed buyer links.
 
 ## Webhooks
 - `POST /webhooks/mpesa` — Daraja callback (idempotent)
-- `POST /webhooks/whatsapp` — inbound+status updates
+- `POST /webhooks/whatsapp` — inbound + status updates
 
 ## Errors
-Problem+JSON:
+Problem+JSON responses:
 ```json
-{"type":"https://errors.whatshelf.app/validation","title":"Invalid input","detail":"price must be >= 0","correlationId":"..."}
-OpenAPI (excerpt)
+{
+  "type": "https://errors.whatshelf.app/validation",
+  "title": "Invalid input",
+  "detail": "price must be >= 0",
+  "correlationId": "..."
+}
+```
+
+### OpenAPI (excerpt)
+```yaml
 openapi: 3.0.3
 info:
   title: WhatsShelf API
@@ -43,7 +47,9 @@ paths:
   /v1/products:
     post:
       summary: Create product
-      responses: { "201": { "description": "Created" } }
+      responses:
+        "201":
+          description: Created
   /v1/orders/{id}/pay:
     post:
       summary: Trigger M-Pesa STK push
@@ -52,5 +58,12 @@ paths:
           application/json:
             schema:
               type: object
-              properties: { method: {enum: [MPESA]}, phone: {type: string} }
-      responses: { "200": { "description": "Intent accepted" } }
+              properties:
+                method:
+                  enum: [MPESA]
+                phone:
+                  type: string
+      responses:
+        "200":
+          description: Intent accepted
+```

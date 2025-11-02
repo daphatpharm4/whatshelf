@@ -25,18 +25,21 @@ pnpm i
 pnpm -w run bootstrap  # installs frontend and api
 cp .env.example .env   # fill secrets
 pnpm -w run dev        # runs functions + PWA with local emulators
-Environments
-dev (shared sandbox), staging (pre-prod), prod
-Secrets in Azure Key Vault; never commit .env with real values
-Documentation
-High-level: docs/Architecture.md
-API spec: docs/API.md
-Data model: docs/DataModel.md
-Security: docs/Security.md
-Runbooks: docs/Runbooks.md
-Technical Arch: docs/Technical_Architecture_Document.md
-License
-Proprietary — All rights reserved.
+```
+
+**Environments:** dev (shared sandbox), staging (pre-prod), prod
+
+**Secrets:** stored in Azure Key Vault; never commit `.env` with real values
+
+**Documentation:**
+- High-level: docs/Architecture.md
+- API spec: docs/API.md
+- Data model: docs/DataModel.md
+- Security: docs/Security.md
+- Runbooks: docs/Runbooks.md
+- Technical Arch: docs/Technical_Architecture_Document.md
+
+**License:** Proprietary — All rights reserved.
 
 ---
 
@@ -85,3 +88,4 @@ RECEIPT_FROM_EMAIL=noreply@whatshelf.app
 
 # Observability
 APPINSIGHTS_CONNECTION_STRING=
+```

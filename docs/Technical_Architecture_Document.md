@@ -1,9 +1,3 @@
-
----
-
-## docs/Technical_Architecture_Document.md (author: CA)
-
-```md
 # Technical Architecture Document (TAD)
 
 ## 1. Scope & Goals
@@ -57,4 +51,3 @@ REST v1 with JWT (merchant) and signed links (buyer). See `docs/API.md`.
 
 ## 12. Compliance
 - Platform T&Cs, Privacy Policy; opt-in messaging practices; data residency within nearest compliant region.
-

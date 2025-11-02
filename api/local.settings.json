@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "COSMOS_ENDPOINT": "https://localhost:8081",
+    "COSMOS_KEY": "C2oF...==",
+    "COSMOS_DB": "whatshelf",
+    "BLOB_CONN": "UseDevelopmentStorage=true",
+    "QUEUE_CONN": "UseDevelopmentStorage=true",
+    "JWT_SIGNING_KEY": "local-dev-key",
+    "MPESA_*": "",
+    "WA_*": ""
+  }
+}
