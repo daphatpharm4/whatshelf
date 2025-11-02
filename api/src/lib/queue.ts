@@ -1,6 +1,9 @@
 import { QueueClient } from '@azure/storage-queue';
 
-const queueClient = new QueueClient(process.env.QUEUE_CONN!, 'jobs');
+const queueClient = QueueClient.fromConnectionString(
+  process.env.QUEUE_CONN!,
+  'jobs',
+);
 await queueClient.createIfNotExists();
 
 export const enqueue = async (type: string, payload: unknown, visibilityTimeout = 0) => {
