@@ -1,0 +1,17 @@
+{
+  "name": "WhatsShelf",
+  "short_name": "WhatsShelf",
+  "description": "Offline-first WhatsApp commerce for micro-merchants",
+  "start_url": ".",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml"
+    }
+  ]
+}
