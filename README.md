@@ -1,22 +1,24 @@
 # WhatsShelf — Turn any WhatsApp into a shop in 60 seconds
 
-**WhatsShelf** is a data-light PWA and WhatsApp bot that lets micro-merchants publish a catalog, accept M-Pesa payments (STK/QR), and issue smart receipts instantly.
+**WhatsShelf** is a data-light PWA and WhatsApp bot that lets micro-merchants publish a catalog, accept M-Pesa payments (STK/QR), and issue smart receipts instantly. The product is designed as a self-serve alternative to agency-built chat commerce with transparent pricing and an experience tuned for informal traders operating in low-connectivity environments.
 
 ## Features
-- Catalog from phone gallery; QR codes per shop/item
-- Checkout via PWA or WhatsApp; STK push & QR
+- Self-serve onboarding guided by in-app tutorials (English & Swahili)
+- Catalog from phone gallery; QR codes per shop/item and per stall
+- Checkout via PWA or WhatsApp with MPesa STK push & QR fallback
 - Branded e-receipts (WhatsApp/SMS/email PDF)
-- Order timeline; low-stock alerts; basic analytics
-- Offline-first browsing and draft orders
+- Order timeline; low-stock alerts; micro-merchant friendly analytics
+- Offline-first browsing, kiosk drafts and automatic resync when online
+- Transparent flat pricing with add-ons for airtime/SMS bundles
 
 ## Architecture
-- Frontend: React + Vite PWA (IndexedDB offline cache)
-- API: Azure Functions (HTTP + Queue triggers)
+- Frontend: React + Vite PWA (service worker precache, IndexedDB sync queue, multilingual UI)
+- API: Azure Functions (HTTP + Queue triggers) exposing dashboard metrics & QR utilities
 - Data: Azure Cosmos DB (NoSQL, partition by merchantId)
-- Storage: Azure Blob + CDN
-- Messaging: WhatsApp Cloud API, SMS fallback
-- Payments: M-Pesa Daraja (STK Push, C2B/QR)
-- Observability: App Insights + Log Analytics
+- Storage: Azure Blob + CDN for receipts and QR assets
+- Messaging: WhatsApp Cloud API, SMS fallback, offline job queue
+- Payments: M-Pesa Daraja (STK Push, C2B/QR) with Airtel integration roadmap
+- Observability: App Insights + Log Analytics, business KPIs surfaced in dashboard
 - IaC: Terraform; CI/CD: GitHub Actions
 
 ## Quick start
@@ -37,10 +39,8 @@ pnpm -w run dev        # runs functions + PWA with local emulators
 - Data model: docs/DataModel.md
 - Security: docs/Security.md
 - Runbooks: docs/Runbooks.md
-codex/fix-documentation-errors-and-implement-mvp-path-lj0oh9
+- Market & différenciation: docs/MarketAnalysis.md
 - Testing playbook: docs/TESTING.md
-=======
- main
 - Technical Arch: docs/Technical_Architecture_Document.md
 
 **License:** Proprietary — All rights reserved.

@@ -11,6 +11,10 @@ export type Order = {
   buyer: { phone: string; name?: string };
   items: { productId: string; qty: number; unitPrice: number }[];
   totals: { subTotal: number; tax: number; grandTotal: number };
+  createdAt?: string;
+  updatedAt?: string;
+  channel?: 'PWA' | 'WHATSAPP' | 'POS';
+  currency?: string;
   payment?: {
     method: 'MPESA' | 'CASH';
     status?: 'PENDING' | 'SUCCESS' | 'FAILED';
